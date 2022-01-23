@@ -5,10 +5,18 @@ import java.util.Scanner;
 import static java.lang.System.*;
 
 public class Problems {
+
+     static Problems problems = new Problems();
+
     public static void main(String[] args) {
 
-        Problems problems = new Problems();
 //        problems.calculateSimpleInterest();
+        problems.computeWithFormula();
+
+    }
+
+    void computeWithFormula(){
+
         Scanner firstInput = new Scanner(in);
         out.println("Enter FirstNumber: ");
         int firstNumber = firstInput.nextInt();
@@ -21,10 +29,10 @@ public class Problems {
         out.println("Enter Formula(Ex:- +,-,*,/): ");
         String symbol = symbolInput.next();
 
-        problems.computateTwoNumbers(firstNumber,secondNumber,symbol);
+        problems.computeTwoNumbers(firstNumber,secondNumber,symbol);
     }
 
-    void computateTwoNumbers(int firstNumber, int secondNumber, String symbol){
+    void computeTwoNumbers(int firstNumber, int secondNumber, String symbol){
 
         switch (symbol) {
             case "+", "addition", "add" -> out.println("Addition of Two Numbers is " + (firstNumber + secondNumber));
