@@ -1,18 +1,32 @@
 package Assignments;
 
 import java.util.Scanner;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 import static java.lang.System.*;
 
 public class Problems {
 
      static Problems problems = new Problems();
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     public static void main(String[] args) {
 
-        problems.findLargestNumber();
+        problems.getCurrencyinDollars();
+//        problems.findLargestNumber();
 //        problems.calculateSimpleInterest();
 //        problems.computeWithFormula();
+    }
+
+    void getCurrencyinDollars(){
+
+        Scanner firstInput = new Scanner(in);
+        out.println("Enter Rupees: ");
+        double indianCurrency = firstInput.nextDouble();
+
+        double dollarCurrency = indianCurrency/74.42;
+        out.println("Value in Dollars is "+ df.format (dollarCurrency) + "$");
     }
 
     void findLargestNumber(){
