@@ -13,13 +13,13 @@ public class Problems {
 
     public static void main(String[] args) {
 
-        problems.getCurrencyinDollars();
+        problems.getCurrencyInDollars();
 //        problems.findLargestNumber();
 //        problems.calculateSimpleInterest();
 //        problems.computeWithFormula();
     }
 
-    void getCurrencyinDollars(){
+    void getCurrencyInDollars(){
 
         Scanner firstInput = new Scanner(in);
         out.println("Enter Rupees: ");
