@@ -10,9 +10,25 @@ public class Problems {
 
     public static void main(String[] args) {
 
+        problems.findLargestNumber();
 //        problems.calculateSimpleInterest();
-        problems.computeWithFormula();
+//        problems.computeWithFormula();
+    }
 
+    void findLargestNumber(){
+        Scanner firstInput = new Scanner(in);
+        out.println("Enter FirstNumber: ");
+        int firstNo = firstInput.nextInt();
+
+        Scanner secondInput = new Scanner(in);
+        out.println("Enter SecondNumber: ");
+        int secondNo = secondInput.nextInt();
+
+        if (firstNo > secondNo){
+            out.println(firstNo+" is the Largest Number");
+        }else {
+            out.println(secondNo+" is the Largest Number");
+        }
     }
 
     void computeWithFormula(){
