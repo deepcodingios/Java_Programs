@@ -8,7 +8,33 @@ public class Problems {
     public static void main(String[] args) {
 
         Problems problems = new Problems();
-        problems.calculateSimpleInterest();
+//        problems.calculateSimpleInterest();
+        Scanner firstInput = new Scanner(in);
+        out.println("Enter FirstNumber: ");
+        int firstNumber = firstInput.nextInt();
+
+        Scanner secondInput = new Scanner(in);
+        out.println("Enter SecondNumber: ");
+        int secondNumber = secondInput.nextInt();
+
+        Scanner symbolInput = new Scanner(in);
+        out.println("Enter Formula(Ex:- +,-,*,/): ");
+        String symbol = symbolInput.next();
+
+        problems.computateTwoNumbers(firstNumber,secondNumber,symbol);
+    }
+
+    void computateTwoNumbers(int firstNumber, int secondNumber, String symbol){
+
+        switch (symbol) {
+            case "+", "addition", "add" -> out.println("Addition of Two Numbers is " + (firstNumber + secondNumber));
+            case "-", "difference", "minus" -> out.println("Difference of Two Numbers is " + (firstNumber - secondNumber));
+            case "*", "multiply" -> out.println("Multiplication of Two Numbers is " + (firstNumber * secondNumber));
+            case "/", "divide" -> out.println("Division of Two Numbers is " + (firstNumber / secondNumber));
+            default -> out.println("No valid formula Provided!!");
+        }
+
+//        out.println("Addition");
     }
 
     void calculateSimpleInterest(){
