@@ -12,7 +12,6 @@ public class Problems {
 
     private static final DecimalFormat df = new DecimalFormat("0.00");
      static Problems problems = new Problems();
-    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     public static void main(String[] args) {
 
