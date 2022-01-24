@@ -2,6 +2,8 @@ package Assignments;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 import static java.lang.System.in;
 import static java.lang.System.out;
@@ -10,6 +12,7 @@ public class Problems {
 
     private static final DecimalFormat df = new DecimalFormat("0.00");
      static Problems problems = new Problems();
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     public static void main(String[] args) {
 
@@ -18,6 +21,7 @@ public class Problems {
 //        problems.calculateSimpleInterest();
 //        problems.computeWithFormula();
     }
+
 
 void getCurrencyInDollars(){
     Scanner firstInput = new Scanner(in);
