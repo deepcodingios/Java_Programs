@@ -1,13 +1,16 @@
 package Assignments;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
-import static java.lang.System.*;
+import static java.lang.System.in;
+import static java.lang.System.out;
 
 public class Problems {
 
+    private static final DecimalFormat df = new DecimalFormat("0.00");
      static Problems problems = new Problems();
     private static final DecimalFormat df = new DecimalFormat("0.00");
 
@@ -19,15 +22,15 @@ public class Problems {
 //        problems.computeWithFormula();
     }
 
-    void getCurrencyInDollars(){
 
-        Scanner firstInput = new Scanner(in);
+void getCurrencyInDollars(){
+    Scanner firstInput = new Scanner(in);
         out.println("Enter Rupees: ");
-        double indianCurrency = firstInput.nextDouble();
+    double indianCurrency = firstInput.nextDouble();
 
-        double dollarCurrency = indianCurrency/74.42;
+    double dollarCurrency = indianCurrency/74.42;
         out.println("Value in Dollars is "+ df.format (dollarCurrency) + "$");
-    }
+}
 
     void findLargestNumber(){
         Scanner firstInput = new Scanner(in);
