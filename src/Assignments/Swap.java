@@ -12,6 +12,8 @@ public class Swap {
 
         swap(10, 20);
         System.out.println(a + "" + b);
+        System.out.println(System.in);
+        System.out.print("Enter the name?");
     }
 
     static void swap(int a, int b){
