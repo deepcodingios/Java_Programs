@@ -1,4 +1,4 @@
-package com.company;
+package Basics;
 
 public class Basics {
     public static void main(String[] args) {
@@ -13,8 +13,6 @@ public class Basics {
         while (count != 5){
             System.out.println(count);
             count++;
-
-
         }
     }
 }
