@@ -8,13 +8,37 @@ public class ArmstrongNumber {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the Number:");
         int n = input.nextInt();
-        System.out.println(isArmStrongNumber(n));
+        System.out.println(isArmstrongNumber(n));
+//        System.out.println(printThreeArmStrongNumbers(n));
+    }
+
+    static boolean isArmstrongNumber(int number){
+
+        int original = number;
+        int sum = 0;
+        int lengthOfNumber = String.valueOf(number).length();
+
+        while (number > 0){
+
+            int reminder = number % 10;
+
+            //Find the Power of give Number
+            int exponent = 1;
+            for (int i = 1; i <= lengthOfNumber; i++){
+                exponent = reminder * exponent;
+            }
+            number = number/10;
+
+            sum = sum + exponent;
+        }
+
+        return sum == original;
     }
 
     //Print all three digits Armstrong number
-    static boolean isArmStrongNumber(int number){
+    static boolean printThreeArmStrongNumbers(int number){
 
-        int origianl = number;
+        int original = number;
         int sum = 0;
 
         while (number > 0){
@@ -24,6 +48,6 @@ public class ArmstrongNumber {
             sum = sum + reminder*reminder*reminder;
         }
 
-        return sum == origianl;
+        return sum == original;
     }
 }
