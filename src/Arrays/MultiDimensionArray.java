@@ -40,5 +40,9 @@ public class MultiDimensionArray {
             }
             System.out.println(" ");
         }
+
+        for (int[] ints : array2D) {
+            System.out.println(Arrays.toString(ints));
+        }
     }
 }
