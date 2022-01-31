@@ -9,6 +9,8 @@ public class LinearSearch {
         System.out.println(answer);
     }
 
+    //Search in the Array: Return Element
+
     //Search in the Array: Return the index if item found. Return -1 is item not found
     static int linearSearch(int[] array, int integer){
         if (array.length == 0){
