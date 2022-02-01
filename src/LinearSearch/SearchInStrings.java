@@ -8,6 +8,20 @@ public class SearchInStrings {
         System.out.println(searchInString(name,target));
     }
 
+    static boolean searchInString2(String name, char target){
+
+        if (name.length() == 0){
+            return false;
+        }
+
+        for (char character: name.toCharArray()) {
+            if (character == target){
+                return true;
+            }
+        }
+        return false;
+    }
+
     static boolean searchInString(String name, char target){
 
         if (name.length() == 0){
