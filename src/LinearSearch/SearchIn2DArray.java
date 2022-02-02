@@ -10,9 +10,9 @@ public class SearchIn2DArray {
                 {45, 67, 90},
                 {18,1234}
         };
-        int target = 12;
+//        int target = 12;
 
-        int[] answer = searchArray(array,target);
+//        int[] answer = searchArray(array,target);
 
 //        System.out.println(Arrays.toString(answer));
         System.out.println(searchArrayForMaximum(array));
@@ -21,10 +21,10 @@ public class SearchIn2DArray {
 
     static int searchArrayForMaximum(int[][] array){
         int max = Integer.MIN_VALUE;
-        for (int row = 0; row < array.length; row++){
-            for (int col = 0; col < array[row].length; col++){
-                if (array[row][col] > max){
-                    max = array[row][col];
+        for (int[] ints : array) {
+            for (int anInt : ints) {
+                if (anInt > max) {
+                    max = anInt;
                 }
             }
         }
