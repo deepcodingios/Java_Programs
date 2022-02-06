@@ -1,17 +1,14 @@
 package BinaySearch;
 
-import java.util.Arrays;
-
-public class FindNumber {
+// Ceiling:- The Smallest Element in an Array which is greater than or equal to the target
+public class Ceiling {
     public static void main(String[] args) {
-
         int[] array = {1,2,3,4,5,6,77,88,99,102,105,115,167};
-        int answer = binarySearch(array,105);
+        int answer = ceilingOfANumber(array,85);
         System.out.println(answer);
     }
 
-    static int binarySearch(int[] array, int target){
-
+    static int ceilingOfANumber(int[] array, int target){
         int startIndex = 0;
         int endIndex = array.length -1;
 
@@ -19,7 +16,7 @@ public class FindNumber {
             //Find Middle Element
             int middle = (startIndex+endIndex)/2;
             if (target == array[middle]){
-                return middle;
+                return array[middle];
             }else {
                 if (target > array[middle]){
                     startIndex = middle+1;
@@ -30,6 +27,7 @@ public class FindNumber {
                 }
             }
         }
-        return -1;
+
+        return array[startIndex];
     }
 }
