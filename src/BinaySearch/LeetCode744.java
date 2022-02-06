@@ -15,13 +15,14 @@ public class LeetCode744 {
             //Find Middle Element
             int middle = startIndex + (endIndex - startIndex)/2;
 
-            if (target < letters[middle]){
-                endIndex = middle-1;
-
-            }else{
-                startIndex = middle+1;
+                if (target > letters[middle]){
+                    startIndex = middle+1;
+                    System.out.println("Start Index Incremented");
+                }else{
+                    endIndex = middle-1;
+                    System.out.println("End Index Decremented");
+                }
             }
-        }
         return letters[startIndex % letters.length];
     }
 }
