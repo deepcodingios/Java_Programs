@@ -1,19 +1,19 @@
 package BinaySearch;
 
 // Ceiling:- The Smallest Element in an Array which is greater than or equal to the target
-public class Ceiling {
+public class Floor {
     public static void main(String[] args) {
         int[] array = {1,2,3,4,5,6,77,88,99,102,105,115,167};
-        int answer = ceilingOfANumber(array,85);
+        int answer = floorOfANumber(array,0);
         System.out.println(answer);
     }
 
-    static int ceilingOfANumber(int[] array, int target){
+    static int floorOfANumber(int[] array, int target){
         int startIndex = 0;
         int endIndex = array.length -1;
 
         //This is to handle the case where the target is greater than the last index of the array.
-        if (target > array[endIndex]){
+        if (target < array[startIndex]){
             return -1;
         }
 
@@ -33,6 +33,6 @@ public class Ceiling {
             }
         }
 
-        return array[startIndex];
+        return array[endIndex];
     }
 }
