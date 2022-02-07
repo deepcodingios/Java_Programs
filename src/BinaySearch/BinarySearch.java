@@ -17,16 +17,14 @@ public class BinarySearch {
             //Find Middle Element
             int middle = startIndex + (endIndex - startIndex)/2;
 
-            if (target == array[middle]){
-                return middle;
-            }else {
-                if (target < array[middle]){
-                    endIndex = middle-1;
+            if (target < array[middle]){
+                endIndex = middle-1;
 //                    System.out.println("Start Index Incremented");
-                }else{
-                    startIndex = middle+1;
+            }else if(target > array[middle]){
+                startIndex = middle+1;
 //                    System.out.println("End Index Decremented");
-                }
+            }else{
+                return middle;
             }
         }
         return -1;
