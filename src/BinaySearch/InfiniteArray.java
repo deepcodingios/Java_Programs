@@ -16,6 +16,10 @@ public class InfiniteArray {
         while (target > array[end]){
             int temp = end + 1;
             end = end + (end-start+1) * 2;
+
+            /*Another possible formula to calculate the next start and next end*/
+//            start = end + 1;
+//            end = (start * 2) + 1;
         }
 
         return binarySearch(array,target,start,end);
