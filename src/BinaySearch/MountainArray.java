@@ -58,15 +58,15 @@ public class MountainArray {
     /*
     Solution by Kunal Kushwaha
      */
-    static int peakIndexInMountainArray(int[] arr) {
+    static int peakIndexInMountainArray(int[] nums) {
         int startIndex = 0;
-        int endIndex = arr.length -1;
+        int endIndex = nums.length -1;
 
         while (startIndex < endIndex){
 
             int middle = startIndex + (endIndex - startIndex)/2;
 
-            if (arr[middle] > arr[middle+1]){
+            if (nums[middle] > nums[middle+1]){
                 //You are in the Descending Part of the Array
                 //This may be the answer but look at Left of the Array
                 //This is why end!= mid -1;
