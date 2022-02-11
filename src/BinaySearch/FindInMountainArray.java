@@ -5,7 +5,17 @@ public class FindInMountainArray {
 
     }
 
-    static void findInMountainArray(int[] array, int target){
+    static int findInMountainArray(int[] array, int target){
+
+        int peakIndex = peakIndexInMountainArray(array);
+
+        int firstTry = orderAgnosticBinarySearch(array, target, 0,peakIndex);
+
+        if (firstTry != -1){
+            return firstTry;
+        }
+
+        return orderAgnosticBinarySearch(array,target,peakIndex, array.length -1);
 
 
     }
