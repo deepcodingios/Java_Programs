@@ -1,18 +1,24 @@
 package Basics;
 
+import java.util.Scanner;
+
 public class Basics {
     public static void main(String[] args) {
 
-//        int a = 20;
-//
-//        if (a == 20) {
-//            System.out.println("Hello World");
-//        }
+        //Input (Build a Scanner)
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("Please enter the First Number");
+        int firstNumber = myScanner.nextInt();
+        System.out.println("Please enter the Second Number");
+        int b = myScanner.nextInt();
+//        System.out.println("Please enter the First Number");
+//        int c = myScanner.nextInt();
 
-        int count = 1;
-        while (count != 5){
-            System.out.println(count);
-            count++;
+        if (firstNumber > b){
+            System.out.println("The Biggest number is " + firstNumber);
+        }else {
+            System.out.println("The Biggest number is " + b);
         }
+
     }
 }
