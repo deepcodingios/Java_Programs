@@ -10,4 +10,15 @@ public class SumOfNaturalNumbers {
             System.out.print(i + " ");
         }
     }
+
+    public Long solve(int A) {
+
+        long sum = 0;
+
+        for(int i = 0; i <= A; i++){
+            sum = (Long) sum + i;
+        }
+
+        return sum;
+    }
 }
