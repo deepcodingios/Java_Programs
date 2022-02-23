@@ -8,31 +8,59 @@ public class ElectricityBill {
 
         int units = scanner.nextInt();
 
-        int billValue = 0;
+        int bill = solve(units);
 
-        while (units > 0){
+        System.out.println(bill);
 
-            if (units <=  50){
-                billValue = calculateUnitRates(units);
-                units -= 50;
-            }else if(units > 50 && units <= 150){
-
-            }
-        }
+//        int billValue = 0;
+//
+//        while (units > 0){
+//
+//            if (units <=  50){
+////                billValue = calculateUnitRates(units);
+//                units -= 50;
+//            }else if(units > 50 && units <= 150){
+//
+//            }
+//        }
     }
 
-    static int calculateUnitRates(int unit){
-        int bill = 0;
-        if (unit > 250){
-            bill *= 1.50;
-        }else if(unit > 150 && unit <= 250){
-            bill *= 1.20;
-        }else if(unit > 50 && unit <= 150){
-            bill *= 0.75;
-        }else{
-            bill *= 0.50;
+    static int solve(int A) {
+        Double bill=0.0;
+        if(A<=50)
+        {
+            bill= A*(0.50);
         }
+        else if(A<=150)
+        {
+            bill=50*0.50+(A-50)*0.75;
+        }
+        else if(A<=250)
+        {
+            bill=50*0.50+100*0.75+(A-150)*1.20;
 
-        return bill;
+        }
+        else
+
+        {
+            bill=50*0.50+100*0.75+100*1.20+(A-250)*1.50;
+        }
+        Double total = bill+0.20*bill;
+        return ((int)Math.floor(bill+0.2*bill));
     }
+
+//    static int calculateUnitRates(int unit){
+//        int bill = 0;
+//        if (unit > 250){
+//            bill *= 1.50;
+//        }else if(unit > 150 && unit <= 250){
+//            bill *= 1.20;
+//        }else if(unit > 50 && unit <= 150){
+//            bill *= 0.75;
+//        }else{
+//            bill *= 0.50;
+//        }
+//
+//        return bill;
+//    }
 }
