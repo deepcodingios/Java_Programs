@@ -65,21 +65,38 @@ public class PatternPrinting {
 //        }
         //------------------------------------------------------------------------
 
-        for (int i = 1; i <= number; i++) {
-
-            /*Spaces*/
-            for (int spaces = 1; spaces <= i-1; spaces++) {
-                System.out.print("_");
-            }
-            /*Stars*/
-            for (int stars = 1; stars <= number-i; stars++) {
-                System.out.print("*");
-            }
-
-            System.out.println();
-        }
+//        for (int i = 1; i <= number; i++) {
+//
+//            /*Spaces*/
+//            for (int spaces = 1; spaces <= i-1; spaces++) {
+//                System.out.print("_");
+//            }
+//            /*Stars*/
+//            for (int stars = 1; stars <= number-i; stars++) {
+//                System.out.print("*");
+//            }
+//
+//            System.out.println();
+//        }
 
         //------------------------------------------------------------------------
+
+        /*Pattern 6
+        1
+        2 3
+        4 5 6
+        7 8 9 10
+        * */
+
+        int value = 1;
+        for (int i = 1; i <= number; i++) {
+
+            for (int j = 1; j <= i; j++) {
+                System.out.print(value + " ");
+                value = value + 1;
+            }
+            System.out.println();
+        }
 
     }
 }
