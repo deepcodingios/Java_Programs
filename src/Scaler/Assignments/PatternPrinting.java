@@ -7,6 +7,29 @@ public class PatternPrinting {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
 
+        //------------------------------------------------------------------------
+        /*
+         1 2 3 4
+         1 2 3
+         1 2
+         1
+         */
+
+        for (int i = 1; i <= number; i++) {
+
+            int internalNumber = number - i + 1;
+
+            for (int j = 1; j <= internalNumber; j++) {
+                if(j<internalNumber){System.out.print(j + " ");}
+                else{System.out.print(j);}
+
+            }
+            System.out.println();
+        }
+
+        //------------------------------------------------------------------------
+
+
 //        for (int i = number; i > 1; i--) {
 //
 //            for (int j = 0; j < i+1; j++) {
@@ -97,6 +120,30 @@ public class PatternPrinting {
             }
             System.out.println();
         }
+
+        //______________________/
+
+        for (int i = 1; i <= number; i++) {
+
+            int leftStars = (number-i+1);
+            int rightStars = (number-i+1);
+            int spaces = 2*(i-1);
+
+            for (int j = 1; j <= leftStars; j++) {
+                System.out.print("*");
+            }
+
+            for (int j = 1; j <= spaces; j++) {
+                System.out.print("_");
+            }
+
+            for (int j = 1; j <= rightStars; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        //______________________/
 
     }
 }
