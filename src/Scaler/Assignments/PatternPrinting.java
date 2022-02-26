@@ -6,6 +6,39 @@ public class PatternPrinting {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
+        //------------------------------------------------------------------------
+        // Star Pattern II
+/*
+        *******
+        *    *
+        *   *
+        *  *
+        * *
+        **
+        *
+*/
+
+        for (int k=1; k <= number; k++) {
+            System.out.print("*");
+        }
+        System.out.println();
+
+        int innerloop = number-1;
+
+        for (int i=1; i <= innerloop; i++) {
+            System.out.print("*");
+
+            int spaces = innerloop-i-1;
+
+            for (int j = 1; j <= spaces; j++) {
+                System.out.print(" ");
+            }
+            if(i != innerloop){System.out.println("*");}
+        }
+
+        System.out.println();
+
+        //------------------------------------------------------------------------
 
         //------------------------------------------------------------------------
         /*
