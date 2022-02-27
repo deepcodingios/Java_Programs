@@ -6,6 +6,45 @@ public class PatternPrinting {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
+
+        //------------------------------------------------------------------------
+        // Star Pattern II
+/*
+        0 0 0 0 1 0 0 0 0
+        0 0 0 2 3 2 0 0 0
+        0 0 3 4 5 4 3 0 0
+        0 4 5 6 7 6 5 4 0
+        5 6 7 8 9 8 7 6 5
+ */
+        for (int i = 1; i <= number; i++) {
+
+            int leftZeroes = (number-i);
+            int rightZeroes = (number-i);
+            int numbers = (i*2-1);
+
+            for (int j = 1; j <= leftZeroes; j++) {
+                System.out.print(0 + "_");
+            }
+
+            for (int j = 1; j <= numbers; j++) {
+//                if (j<numbers){System.out.print(j + "_");}
+//                else {System.out.print(j);}
+                if (j<numbers){System.out.print(j + "_");}
+                else{System.out.print(j);}
+            }
+
+            for (int j = 1; j <= rightZeroes; j++) {
+                if (j<leftZeroes){System.out.print(0 + "_");}
+                else {System.out.print(0);}
+            }
+            System.out.println();
+        }
+
+
+
+        //------------------------------------------------------------------------//
+
+
         //------------------------------------------------------------------------
         // Star Pattern II
 /*
