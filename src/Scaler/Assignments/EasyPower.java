@@ -8,9 +8,9 @@ public class EasyPower {
 
         int powerNumber = scanner.nextInt();
 
-        int result = number;
+        int result = 1;
 
-        for(int i = 1; i < powerNumber; i++){
+        for(int i = 1; i <= powerNumber; i++){
             result = result * number;
         }
 
