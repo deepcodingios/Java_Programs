@@ -10,6 +10,22 @@ public class Strings {
         System.out.println(output);
     }
 
+    static void firstOccurenceOfWord(String A, String B){
+
+        int lengthOfString = A.length();
+
+        for (int i = 0; i < lengthOfString; i++) {
+
+            for (int j = i+1; j < lengthOfString; j++) {
+
+//                if
+
+            }
+
+
+        }
+    }
+
     static String reverseWordsInASentence(String S){
 
         String [] array = S.split(" ");
