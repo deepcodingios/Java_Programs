@@ -3,7 +3,9 @@ package Arrays;
 public class SecondLargestNumber {
     public static void main(String[] args) {
 
-        int [] array = {1, 3, 4, 5, -1, 0};
+//        int [] array = {1, 3, 4, 5, -1, 0};
+
+        int [] array = {-11,-5,0};
 
         int length = array.length;
 
@@ -21,16 +23,13 @@ public class SecondLargestNumber {
         }
 
         System.out.println("Maximum Element is " + maximum);
-        int secondMaximum = maximum-1;
+        int secondMaximum = Integer.MIN_VALUE;
 
         for(int i = 0; i < length; i++){
-            int element = array[i];
-            if ((element < maximum) && (element > secondMaximum)){
-                secondMaximum = element;
-                System.out.println("SecondMaximum is " + secondMaximum);
+            if (array[i] != maximum) {
+                secondMaximum = Math.max(secondMaximum, array[i]);
             }
         }
-
         System.out.print(secondMaximum);
     }
 }
