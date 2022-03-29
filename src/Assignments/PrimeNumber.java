@@ -9,28 +9,29 @@ public class PrimeNumber {
         System.out.println("Enter the Number:");
         int n = input.nextInt();
         System.out.println(isPrimeNumber(n));
+        printAllPrimesTillTheNumber(-5);
     }
 
     static boolean isPrimeNumber(int number) {
         int count = 0;
 
         for(int i = 1; i <= number; i++){
-            System.out.println("Count is " + count + " and i value is " + i);
+//            System.out.println("Count is " + count + " and i value is " + i);
             if (number % i == 0){
-                System.out.println("i value is " + i);
+//                System.out.println("i value is " + i);
                 count ++;
             }
 
             if (count >= 3){
-                System.out.println("Exited the loop with count: " + count);
+//                System.out.println("Exited the loop with count: " + count);
                 break;
             }
         }
         if(count == 2){
-            System.out.println("YES");
+//            System.out.println("YES");
             return true;
         }else{
-            System.out.println("NO");
+//            System.out.println("NO");
             return false;
         }
     }
@@ -49,5 +50,21 @@ public class PrimeNumber {
             c++;
         }
         return c * c > n;
+    }
+
+    static void printAllPrimesTillTheNumber(int number){
+
+        int count = 0;
+        for (int i = 1; i < number; i++) {
+
+            boolean isPrime = isPrimeNumber(i);
+            if (isPrime){
+                count++;
+                System.out.print(i + " ");
+            }
+        }
+        if (count == 0){
+            System.out.println("There are no prime numbers less than n");
+        }
     }
 }
