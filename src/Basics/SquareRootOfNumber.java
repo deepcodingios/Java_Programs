@@ -3,7 +3,7 @@ package Basics;
 public class SquareRootOfNumber {
     public static void main(String[] args) {
 
-        int result = findSquareRootOfNumber(11);
+        int result = findSquareRootOfNumber(121);
         System.out.println(result);
     }
 
@@ -17,12 +17,15 @@ public class SquareRootOfNumber {
         // i*i is greater than or equal to x.
         int i = 1, result = 1;
 
-        while (result <= number) {
+        while (result < number) {
             i++;
             result = i * i;
             System.out.println(i + " " + result);
         }
-        return i - 1;
 
+        if (i*i == number){
+            return i;
+        }
+        return -1;
     }
 }
