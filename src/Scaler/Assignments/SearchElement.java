@@ -21,7 +21,7 @@ public class SearchElement {
                 array[k] = scanner.nextInt();
             }
 
-            System.out.println(array);
+//            System.out.println(array);
 
             int searchNumber = scanner.nextInt();
 
