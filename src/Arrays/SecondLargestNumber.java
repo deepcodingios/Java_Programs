@@ -3,9 +3,7 @@ package Arrays;
 public class SecondLargestNumber {
     public static void main(String[] args) {
 
-//        int [] array = {1, 3, 4, 5, -1, 0};
-
-        int [] array = {-11,-5,0};
+        int [] array = {1, 3, 4, 5, -1, 0};
 
         int length = array.length;
 
