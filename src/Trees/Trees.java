@@ -29,4 +29,14 @@ public class Trees {
         inorderTraversal(A.right,list);
         return list;
     }
+
+    static ArrayList<Integer> preorderTraversal(TreeNode A, ArrayList<Integer> list) {
+        if (A == null){
+            return list;
+        }
+        list.add(A.val);
+        preorderTraversal(A.left,list);
+        preorderTraversal(A.right,list);
+        return list;
+    }
 }
