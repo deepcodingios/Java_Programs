@@ -39,4 +39,15 @@ public class Trees {
         preorderTraversal(A.right,list);
         return list;
     }
+
+    static ArrayList<Integer> postorderTraversal(TreeNode A, ArrayList<Integer> list) {
+        if (A == null){
+            return list;
+        }
+        postorderTraversal(A.left,list);
+        postorderTraversal(A.right,list);
+        list.add(A.val);
+
+        return list;
+    }
 }
