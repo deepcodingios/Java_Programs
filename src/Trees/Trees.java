@@ -1,6 +1,8 @@
 package Trees;
 
 //import javax.swing.tree.TreeNode;
+import com.sun.source.tree.Tree;
+
 import java.util.ArrayList;
 
 class TreeNode {
@@ -49,6 +51,33 @@ public class Trees {
         list.add(A.val);
 
         return list;
+    }
+
+    static int isSymmetric(TreeNode A){
+
+        TreeNode invertedTree = mirror(A.left);
+
+        if (isSameTree(invertedTree,A.right) == 1){
+            return 1;
+        }else {
+            return 0;
+        }
+    }
+
+    static TreeNode mirror(TreeNode A){
+
+        if (A == null){
+            return A;
+        }
+
+        TreeNode B = A.left;
+        A.left = A.right;
+        A.right = B;
+
+        mirror(A.left);
+        mirror(A.right);
+
+        return A;
     }
 
     static int isSameTree(TreeNode A, TreeNode B) {
