@@ -14,7 +14,7 @@ public class PrefixSumProblems {
         arrayList.add(-3);
         arrayList.add(5);
 //        arrayList.add(0);
-        int prefixEvenSum = getPrefixEvenSumOfAnIndex(5,arrayList);
+        int prefixEvenSum = getPrefixEvenSumOfAnIndex(2,arrayList);
 
         System.out.println(prefixEvenSum);
         System.out.println(getPrefixEvenSumArrayfromArray(arrayList));
@@ -29,7 +29,7 @@ public class PrefixSumProblems {
             return prefixEvenSum;
         }
 
-        for (int i = 1; i < arrayList.size(); i++) {
+        for (int i = 1; i <= index; i++) {
 
             if (i % 2 == 0){
                 prefixEvenSum = prefixEvenSum + arrayList.get(i);
@@ -39,7 +39,7 @@ public class PrefixSumProblems {
         return prefixEvenSum;
     }
 
-    static ArrayList getPrefixEvenSumArrayfromArray(ArrayList<Integer> arrayList){
+    static ArrayList<Integer> getPrefixEvenSumArrayfromArray(ArrayList<Integer> arrayList){
 
         ArrayList<Integer> prefixEvenSumList = new ArrayList<>(arrayList.size());
 
