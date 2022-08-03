@@ -47,6 +47,8 @@ public class EquilibriumIndex {
         return prefixSum;
     }
 
+
+
     static int findEquilibriumIndex(ArrayList<Integer> arrayList) {
 
         ArrayList<Integer> prefixArray = getPrefixSumArrayOfAnArray(arrayList);         
