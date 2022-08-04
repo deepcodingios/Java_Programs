@@ -1,6 +1,7 @@
 package Arrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PrefixSumProblems {
     public static void main(String[] args) {
@@ -18,6 +19,14 @@ public class PrefixSumProblems {
 
         System.out.println(prefixEvenSum);
         System.out.println(getPrefixEvenSumArrayfromArray(arrayList));
+
+        System.out.printf("Mad Max");
+    }
+
+    static void pickFromBothSidesInArray(ArrayList<Integer>list){
+
+
+
     }
 
     static int getPrefixEvenSumOfAnIndex(int index, ArrayList<Integer> arrayList){
