@@ -23,9 +23,22 @@ public class PrefixSumProblems {
         System.out.printf("Mad Max");
     }
 
-    static void pickFromBothSidesInArray(ArrayList<Integer>list){
+    static int pickMaxSumFromBothSidesInArray(ArrayList<Integer>list){
 
+        int maxSum = list.get(0);
+        //[5,-2,3,1,2]
+        int maxElements = 3;
 
+        /*
+        5-2+3 = 6, r = 3+1+2 = 6
+        5-2+2 = 5, r = 1+2+5 = 8
+        5+1+2 = 8, r = 5-2+2 = 5
+        */
+        for (int left = 0; left < maxElements; left++) {
+
+        }
+
+        return maxSum;
 
     }
 
