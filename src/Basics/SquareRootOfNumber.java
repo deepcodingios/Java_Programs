@@ -1,9 +1,13 @@
 package Basics;
 
+import javax.lang.model.util.ElementScanner14;
+import javax.xml.stream.events.EndElement;
+
 public class SquareRootOfNumber {
     public static void main(String[] args) {
 
-        int result = findSquareRootOfNumber(121);
+        // int result = findSquareRootOfNumber(121);
+        int result = findSquareRootOfNumberWithBinarySearch(0);
         System.out.println(result);
     }
 
@@ -27,5 +31,32 @@ public class SquareRootOfNumber {
             return i;
         }
         return -1;
+    }
+
+    static int findSquareRootOfNumberWithBinarySearch(int A){
+
+        int startIndex = 1;
+        int lastIndex = A/2;
+
+        int answer = 0;
+
+        while(startIndex <= lastIndex){
+
+            int middleIndex = startIndex + (lastIndex - startIndex)/2;
+
+            if(A == middleIndex*middleIndex){
+                return middleIndex;
+            }
+            else if(middleIndex*middleIndex < A){
+                answer = middleIndex;
+                startIndex = middleIndex+1;
+
+            }else{
+
+                lastIndex = middleIndex -1;
+            }
+
+        }        
+        return answer;
     }
 }

@@ -20,11 +20,6 @@ public class CompareTheStrings {
             finalLength = length1;
         }
 
-        int string1Value = 0;
-        int string2Value = 0;
-
-        boolean isStringEqual = false;
-
         for(int i = 0; i <finalLength; i++){
             int value1 = A.charAt(i);
             int value2 = B.charAt(i);
