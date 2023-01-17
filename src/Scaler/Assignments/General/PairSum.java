@@ -1,4 +1,4 @@
-package Scaler.Assignments;
+package Scaler.Assignments.General;
 
 public class PairSum {
     public static void main(String[] args) {

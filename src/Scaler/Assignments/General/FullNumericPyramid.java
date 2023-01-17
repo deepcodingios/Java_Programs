@@ -1,4 +1,4 @@
-package Scaler.Assignments;
+package Scaler.Assignments.General;
 
 public class FullNumericPyramid {
     public static void main(String[] args) {

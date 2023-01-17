@@ -1,4 +1,4 @@
-package Scaler.Assignments;
+package Scaler.Assignments.General;
 
 import java.util.ArrayList;
 import java.util.List;

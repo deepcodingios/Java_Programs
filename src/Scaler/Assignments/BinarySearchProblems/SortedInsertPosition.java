@@ -1,4 +1,4 @@
-package Scaler.Assignments;
+package Scaler.Assignments.BinarySearchProblems;
 
 public class SortedInsertPosition {
 
