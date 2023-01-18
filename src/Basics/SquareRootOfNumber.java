@@ -6,12 +6,12 @@ import javax.xml.stream.events.EndElement;
 public class SquareRootOfNumber {
     public static void main(String[] args) {
 
-        // int result = findSquareRootOfNumber(121);
-        int result = findSquareRootOfNumberWithBinarySearch(0);
+        // long result = findSquareRootOfNumber(930675566);
+        int result = findSquareRootOfNumberWithBinarySearch(930675566);
         System.out.println(result);
     }
 
-    static int findSquareRootOfNumber(int number){
+    static long findSquareRootOfNumber(long number){
 
         // Base cases
         if (number == 0 || number == 1)
@@ -24,7 +24,7 @@ public class SquareRootOfNumber {
         while (result < number) {
             i++;
             result = i * i;
-            System.out.println(i + " " + result);
+            // System.out.println(i + " " + result);
         }
 
         if (i*i == number){
@@ -42,12 +42,12 @@ public class SquareRootOfNumber {
 
         while(startIndex <= lastIndex){
 
-            int middleIndex = startIndex + (lastIndex - startIndex)/2;
+            int middleIndex = startIndex + ((lastIndex - startIndex)/2);
 
             if(A == middleIndex*middleIndex){
                 return middleIndex;
             }
-            else if(middleIndex*middleIndex < A){
+            else if(middleIndex <= A/middleIndex){
                 answer = middleIndex;
                 startIndex = middleIndex+1;
 
@@ -55,7 +55,6 @@ public class SquareRootOfNumber {
 
                 lastIndex = middleIndex -1;
             }
-
         }        
         return answer;
     }
