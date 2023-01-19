@@ -3,19 +3,10 @@ package Arrays;
 public class MaxSubArraySum {
     public static void main(String[] args) {
 
-        int [] array = {4,6,7,3,5,7,9,5,6,8,9};
+        // int [] array = {4,6,7,3,5,7,9,5,6,8,9};
 
-        int lengthOfSubArray = 5;
+        // int lengthOfSubArray = 5;
 
-        for(int i = 0; i<array.length; i++){
-
-            if(i+lengthOfSubArray-1 < array.length){
-
-                int answer = findSubArraySum(array, i, i+lengthOfSubArray-1);
-
-                System.out.println("Total Sum is " + answer);
-            }           
-        }
     }
 
     static int findSubArraySum(int [] subArray, int start, int end){
@@ -32,7 +23,26 @@ public class MaxSubArraySum {
         return sum;
     }
     
-    static void MaxSubArraySumForLength(int [] A, int length){
+    static int maxSubArraySumForLength(int [] A, int lengthOfSubArray){
 
+        // int [] A = {4,6,7,3,5,7,9,5,6,8,9};
+
+        // int lengthOfSubArray = 5;
+
+        int maxSum = A[0];
+
+        for(int i = 0; i<A.length; i++){
+
+            if(i+lengthOfSubArray-1 < A.length){
+
+                int answer = findSubArraySum(A, i, i+lengthOfSubArray-1);
+
+                // System.out.println("Total Sum is " + answer);
+                if (answer > maxSum){
+                    maxSum = answer;
+                }
+            }           
+        }
+        return maxSum;
     }
 }
