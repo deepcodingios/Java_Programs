@@ -29,7 +29,7 @@ public class HashMapProblems {
 
     static ArrayList<Integer> commonElements(int[] A, int[] B) {
 
-        ArrayList<Integer> commonElements = new ArrayList<Integer>;
+        ArrayList<Integer> commonElements = new ArrayList<Integer>();
 
         HashMap<Integer,Integer> hashMap_1 = new HashMap<>();
 
