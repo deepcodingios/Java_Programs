@@ -2,8 +2,10 @@ package Resursion;
 
 public class Power {
     public static void main(String[] args) {
-        System.out.println(power(0,0));
-        System.out.println(powerModulo(0,0,1));
+        System.out.println(isMagicNumber(83557));
+//        System.out.println(sumOfDigits(250));
+//        System.out.println(power(0,0));
+//        System.out.println(powerModulo(0,0,1));
     }
 
     static int power(int a, int p){
@@ -33,6 +35,36 @@ public class Power {
         }else {
             return (((A%C) * ((p*p)%C))%C);
         }
+    }
 
+    static int sumOfDigits(int A){
+        if (A == 0){
+            return 0;
+        }
+        int division = A/10;
+        int reminder = A%10;
+
+        return reminder + sumOfDigits(division);
+    }
+
+    static int isMagicNumber(int A){
+
+        if (A == 0){
+            return 0;
+        }
+        int division = A/10;
+        int reminder = A%10;
+
+        int result = reminder + sumOfDigits(division);
+
+        while (result > 9){
+            result = isMagicNumber(result);
+        }
+
+        if (result != 1){
+            return 0;
+        }else {
+            return 1;
+        }
     }
 }
