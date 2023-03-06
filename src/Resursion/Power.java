@@ -2,7 +2,8 @@ package Resursion;
 
 public class Power {
     public static void main(String[] args) {
-        System.out.println(isMagicNumber(83557));
+        System.out.println(find(5,5));
+//        System.out.println(isMagicNumber(83557));
 //        System.out.println(sumOfDigits(250));
 //        System.out.println(power(0,0));
 //        System.out.println(powerModulo(0,0,1));
@@ -65,6 +66,20 @@ public class Power {
             return 0;
         }else {
             return 1;
+        }
+    }
+
+    static int find(int A, int B){
+
+        if(B == 0){
+            return 0;
+        }
+
+        int p = find(A-1,B/2);
+        if (B % 2 == 0){
+            return p;
+        }else {
+            return 1-p;
         }
     }
 }
