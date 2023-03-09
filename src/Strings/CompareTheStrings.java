@@ -3,7 +3,7 @@ package Strings;
 public class CompareTheStrings {
     public static void main(String[] args) {
 
-        int returnValue = solve("interview","bit");
+        int returnValue = solve("scaler","scalem");
         System.out.println(returnValue);
     }
 
@@ -15,9 +15,9 @@ public class CompareTheStrings {
         int finalLength = 0;
 
         if (length1 > length2){
-            finalLength = length2;
-        }else{
             finalLength = length1;
+        }else{
+            finalLength = length2;
         }
 
         for(int i = 0; i <finalLength; i++){
@@ -30,6 +30,9 @@ public class CompareTheStrings {
                 return 1;
             }
         }
+
+        if (length1 > length2) return 1;
+        if (length1 < length2) return -1;
 
         return 0;
 
