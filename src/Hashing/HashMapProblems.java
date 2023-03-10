@@ -70,7 +70,6 @@ public class HashMapProblems {
 
         }
 
-
         System.out.println(hashMap_1);
         System.out.println(hashMap_2);
 
