@@ -10,12 +10,81 @@ public class SortingProblems {
 //        int [] A = {1, 1, 3, 3};
 //        int [] A = {0, 1, 2, 0, 1, 2};
 //        int [] A = {0};
+        int firstArray [] = {3,7,8,9,10,1,2,3};
+        int secondArray [] = {2,5,6,11,12};
+//        int finalArray [] = mergeSortedArrays(firstArray,secondArray);
+//        System.out.println(Arrays.toString(finalArray));
+
+        System.out.println(Arrays.toString(merge(firstArray,0,firstArray.length/2,firstArray.length-1)));
         int [] A = {2, 0, 0, 1, 0, 0, 2, 2, 1, 1, 0, 0, 1, 0, 2, 1, 1, 0, 1, 0, 1, 2, 2, 2, 0, 0, 1, 0, 2, 1, 1, 2, 1, 2, 2, 1, 0, 2, 2, 1, 1, 1, 0, 1, 0, 1, 0, 2, 1, 2, 0, 2, 0, 1, 1, 0, 2, 2, 1, 2, 0, 2, 1, 1, 1, 2, 0, 1, 0, 2, 2, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 2, 1, 1, 0, 2, 1, 2, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 1, 1, 0, 2, 1, 2, 2, 2, 1, 2, 2, 0, 1, 0, 1, 2, 1, 1, 0, 1, 2, 0, 1, 0, 2, 2, 1, 2, 1, 0, 2, 2, 1, 1, 0, 2, 1, 2};
         int [] answerArray = sortColors(A);
         System.out.println(Arrays.toString(answerArray));
 //        int [] A = {-4, 7, 5, 3, 5, -4, 2, -1, -9, -8, -3, 0, 9, -7, -4, -10, -4, 2, 6, 1, -2, -3, -1, -8, 0, -8, -7, -3, 5, -1, -8, -8, 8, -1, -3, 3, 6, 1, -8, -1, 3, -9, 9, -6, 7, 8, -6, 5, 0, 3, -4, 1, -10, 6, 3, -8, 0, 6, -9, -5, -5, -6, -3, 6, -5, -4, -1, 3, 7, -6, 5, -8, -5, 4, -3, 4, -6, -7, 0, -3, -2, 6, 8, -2, -6, -7, 1, 4, 9, 2, -10, 6, -2, 9, 2, -4, -4, 4, 9, 5, 0, 4, 8, -3, -9, 7, -8, 7, 2, 2, 6, -9, -10, -4, -9, -5, -1, -6, 9, -10, -1, 1, 7, 7, 1, -9, 5, -1, -3, -3, 6, 7, 3, -4, -5, -4, -7, 9, -6, -2, 1, 2, -1, -7, 9, 0, -2, -2, 5, -10, -1, 6, -7, 8, -5, -4, 1, -9, 5, 9, -2, -6, -2, -9, 0, 3, -10, 4, -6, -6, 4, -3, 6, -7, 1, -3, -5, 9, 6, 2, 1, 7, -2, 5};
         int result = nobleInteger(A);
         System.out.println(result);
+    }
+
+    static int [] merge(int [] A, int s, int m,int e){
+
+        int [] finalArray = new int[e-s+1];
+
+        int p1 = s; int p2 = m+1; int p3 = 0;
+
+        while (s <= m && p2 <= e){
+            if (A[p1] < A[p2]){
+                finalArray[p3] = A[p1];
+                p1++;
+                p3++;
+            }else {
+                finalArray[p3] = A[p2];
+                p2++;
+                p3++;
+            }
+        }
+        while (p1 <= m){
+            finalArray[p3] = A[p1];
+            p1++;
+            p3++;
+        }
+        while (p2 <= e){
+            finalArray[p3] = A[p2];
+            p2++;
+            p3++;
+        }
+
+        return finalArray;
+    }
+
+    static int [] mergeSortedArrays(int [] A, int [] B){
+
+        int p1 = 0; int p2 = 0; int p3 = 0;
+
+        int [] finalArray = new int[A.length+B.length];
+
+        while (p1 < A.length && p2 < B.length){
+            if (A[p1] < B[p2]){
+                finalArray[p3] = A[p1];
+                p1++;
+                p3++;
+            }else {
+                finalArray[p3] = B[p2];
+                p2++;
+                p3++;
+            }
+        }
+        while (p1 < A.length){
+            finalArray[p3] = A[p1];
+            p1++;
+            p3++;
+        }
+        while (p2 < B.length){
+            finalArray[p3] = B[p2];
+            p2++;
+            p3++;
+        }
+
+        return finalArray;
+
     }
 
     static int nobleInteger(int [] A){
