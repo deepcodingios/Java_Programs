@@ -1,11 +1,18 @@
 package Strings;
 
+import java.util.Scanner;
+
 public class Strings {
 
     public static void main(String[] args) {
 
 //        learningCharacterArray("Pradeep");
 //        reverseString("abcdefg");
+
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        System.out.println("String: " + s);
+
         String output = reverseWordsInASentence("My Name is Pradeep");
         System.out.println(output);
     }

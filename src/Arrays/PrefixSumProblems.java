@@ -5,6 +5,10 @@ import java.util.Arrays;
 
 public class PrefixSumProblems {
     public static void main(String[] args) {
+
+        int [] array = {1,2,3,4,5};
+        System.out.println(Arrays.toString(prefixSum(array)));
+
         ArrayList<Integer> arrayList = new ArrayList<>(100);
 
         //[3,-2,4,6,-3,5]
@@ -21,6 +25,20 @@ public class PrefixSumProblems {
         System.out.println(getPrefixEvenSumArrayfromArray(arrayList));
 
         System.out.printf("Mad Max");
+    }
+
+    static int [] prefixSum(int [] array){
+        int [] prefixArray = new int[array.length];
+
+        prefixArray[0] = array[0];
+        int sum = prefixArray[0];
+
+        for (int i = 1; i < array.length; i++){
+            sum = sum + array[i];
+            prefixArray[i] = sum;
+        }
+
+        return prefixArray;
     }
 
     static int pickMaxSumFromBothSidesInArray(ArrayList<Integer>list){
