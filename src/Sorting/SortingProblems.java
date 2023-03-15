@@ -4,7 +4,14 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class SortingProblems {
+
+    static int count = 0;
     public static void main(String[] args) {
+
+        int [] array = {45, 10, 15, 25, 50};
+        mergeSortInPlace(array,0,array.length-1);
+
+        System.out.println("The total count is - " + count);
 
         int [] salaries = {4000,3000,1000,2000};
         double result1 = average(salaries);
@@ -15,8 +22,9 @@ public class SortingProblems {
 //        int [] A = {0, 1, 2, 0, 1, 2};
 //        int [] A = {0};
         int firstArray [] = {8, 16, 80, 55, 32, 8, 38, 40, 65, 18, 15, 45, 50, 38, 54, 52, 23, 74, 81, 42, 28, 16, 66, 35, 91, 36, 44, 9, 85, 58, 59, 49, 75, 20, 87, 60, 17, 11, 39, 62, 20, 17, 46, 26, 81, 92};
+        mergeSortInPlace(firstArray,0,firstArray.length-1);
 
-        System.out.println(Arrays.toString(mergeSort(firstArray)));
+        System.out.println(Arrays.toString(firstArray));
 //                {3,7,8,9,10,1,2,3};
 
         int secondArray [] = {2,5,6,11,12};
@@ -50,7 +58,19 @@ public class SortingProblems {
 
     }
 
-    static int [] merge(int [] first, int [] second){
+    public int [] mergeSort(int [] A){
+
+        if (A.length == 1) return A;
+
+        int middle = (A.length) /2;
+
+        int left [] = mergeSort(Arrays.copyOfRange(A,0,middle));
+        int right [] = mergeSort(Arrays.copyOfRange(A,middle,A.length));
+
+        return merge(left,right);
+    }
+
+    public int [] merge(int [] first, int [] second){
 
         int [] finalArray = new int[first.length + second.length];
 
@@ -81,16 +101,53 @@ public class SortingProblems {
         return finalArray;
     }
 
-    static int [] mergeSort(int [] A){
+    public static void mergeSortInPlace(int[] A, int s, int e){
 
-        if (A.length == 1) return A;
+        if (e-s == 1) return;
 
-        int middle = (A.length) /2;
+        int middle = (s+e) /2;
 
-        int left [] = mergeSort(Arrays.copyOfRange(A,0,middle));
-        int right [] = mergeSort(Arrays.copyOfRange(A,middle,A.length));
+        mergeSortInPlace(A,s,middle);
+        mergeSortInPlace(A,middle,e);
 
-        return merge(left,right);
+        mergeInPlace(A,s,middle,e);
+    }
+
+    static void mergeInPlace(int [] array, int s, int m, int e){
+
+        int [] finalArray = new int[e-s];
+
+        int p1 = s; int p2 = m; int p3 = 0;
+
+        while (p1 < m && p2 < e){
+            if (array[p1] < array[p2]){
+                finalArray[p3] = array[p1];
+                p1++;
+                p3++;
+            }else {
+
+                count = count + (m - p1 +1);
+                System.out.println("Count incrementing is " + count);
+
+                finalArray[p3] = array[p2];
+                p2++;
+                p3++;
+            }
+        }
+        while (p1 < m){
+            finalArray[p3] = array[p1];
+            p1++;
+            p3++;
+        }
+        while (p2 < e){
+            finalArray[p3] = array[p2];
+            p2++;
+            p3++;
+        }
+
+        for (int i = 0; i < finalArray.length; i++){
+            array[s+i] = finalArray[i];
+        }
     }
 
     static int [] mergeSortedArrays(int [] A, int [] B){
