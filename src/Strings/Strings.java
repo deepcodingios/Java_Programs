@@ -9,6 +9,9 @@ public class Strings {
 //        learningCharacterArray("Pradeep");
 //        reverseString("abcdefg");
 
+        int firstIndex = firstOccurenceOfWord("lvnrqpz","rogq");
+        System.out.println("Index with first occurence of word is " + firstIndex);
+
         Scanner scan = new Scanner(System.in);
         String s = scan.nextLine();
         System.out.println("String: " + s);
@@ -17,20 +20,28 @@ public class Strings {
         System.out.println(output);
     }
 
-    static void firstOccurenceOfWord(String A, String B){
+    static int firstOccurenceOfWord(String A, String B){
 
         int lengthOfString = A.length();
 
-        for (int i = 0; i < lengthOfString; i++) {
+        for (int i = 0; i < lengthOfString+1-B.length(); i++) {
+//            char matchChar = A.charAt(i);
+//            String matchString = String.valueOf(matchChar);
+            String matchString = "";
 
-            for (int j = i+1; j < lengthOfString; j++) {
-
-//                if
-
+            for (int j = i; j < i+B.length(); j++) {
+                matchString = matchString + String.valueOf(A.charAt(j));
             }
 
-
+            if (matchString.equalsIgnoreCase(B)){
+                return i;
+            }
+//            if (matchString == B){
+//
+//            }
         }
+
+        return -1;
     }
 
     static String reverseWordsInASentence(String S){
