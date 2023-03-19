@@ -3,11 +3,32 @@ package Arrays;
 public class MaxSubArraySum {
     public static void main(String[] args) {
 
-        // int [] array = {4,6,7,3,5,7,9,5,6,8,9};
+         int [] array = {1,2,3,4,5,6};
+         long resultSum = subArraySum(array);
+        System.out.println("Total sum of Sub Arrays is " + resultSum);
 
         // int lengthOfSubArray = 5;
 
     }
+
+    static long subArraySum(int [] A){
+        long totalSum = 0;
+        long length = A.length;
+
+//        for(int i = 0; i < A.length; i++){
+//            int tempSum = 0;
+//            for(int j = i; j < A.length;j++ ){
+//                tempSum = tempSum + A[j];
+//                totalSum = totalSum + tempSum;
+//            }
+//        }
+
+        for (int i = 0;i < A.length;i++){
+            totalSum += A[i] * (i+1) * (length-i);
+        }
+        return totalSum;
+    }
+
 
     static int findSubArraySum(int [] subArray, int start, int end){
 
